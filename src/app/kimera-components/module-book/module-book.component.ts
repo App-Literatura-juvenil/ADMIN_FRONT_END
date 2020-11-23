@@ -36,10 +36,16 @@ export class ModuleBookComponent implements OnInit {
           if(res.idBook){
             Swal.fire(
               'Libro',
-              'El Libro fue guardado exitosamente',
+              'LIBRO GUARDADO EXITOSAMENTE',
               'success'
             );
             this.newBook = new Book()
+          } else {
+            Swal.fire(
+              'Libros',
+              'EL LIBRO NO PUDO SER GUARDADO',
+              'error'
+            )
           }
         })
       }

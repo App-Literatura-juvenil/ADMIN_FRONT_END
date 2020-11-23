@@ -21,9 +21,10 @@ import ImageResize  from 'quill-image-resize';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*Dependencies from Primeng */
 import { TabMenuModule } from 'primeng/tabmenu';
-import { CardModule } from 'primeng/card'
-import { DropdownModule } from 'primeng/dropdown'
-import { ButtonModule } from 'primeng/button'
+import { CardModule } from 'primeng/card';
+import { DropdownModule } from 'primeng/dropdown';
+import { ButtonModule } from 'primeng/button';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ButtonModule } from 'primeng/button'
     TabMenuModule,
     CardModule,
     DropdownModule,
-    ButtonModule
+    ButtonModule,
+    ToggleButtonModule
   ],
   providers: [
     AuthorServiceService

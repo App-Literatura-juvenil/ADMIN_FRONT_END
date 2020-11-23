@@ -39,14 +39,14 @@ export class ModuleAuthorComponent implements OnInit {
             if(res.idAuthor){
               Swal.fire(
                 'Autor',
-                'Autor guardado exitosamente',
+                'AUTOR GUARDADO EXITOSAMENTE',
                 'success'
               );
               this.author = new Author();
             } else {
               Swal.fire(
                 'Autor',
-                'El Autor no pudo ser guardado',
+                'EL AUTOR NO PUDO SER GUARDADO',
                 'error'
               );
             }

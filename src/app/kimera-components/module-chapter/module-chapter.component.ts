@@ -30,8 +30,14 @@ export class ModuleChapterComponent implements OnInit {
       if(res.idChapter){
         Swal.fire(
           'Capitulo',
-          'EL cAPITULO FUE GUARDADO EXITOSAMENTE',
+          'CAPITULO GUARDADO EXITOSAMENTE',
           'success'
+        )
+      } else {
+        Swal.fire(
+          'Capitulo',
+          'EL CAPITULO NO PUDO SER GUARDADO',
+          'error'
         )
       }
     })

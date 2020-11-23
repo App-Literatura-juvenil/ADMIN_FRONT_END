@@ -1,1 +1,96 @@
-<p>module-question works!</p>
+<p-card header="CREAR PREGUNTA POR LIBRO">
+    <p-card header="PREGUNTA">
+        <div>
+            <p-dropdown [options]="books" [(ngModel)]="Question.idBook" placeholder="Seleccione un Libro"
+                [virtualScroll]="true" [filter]="true" [style]="{'width': '100%'}"></p-dropdown>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !Question.idBook">
+                <div class="container-error-message">
+                    Se requiere seleccionar un libro
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+    <p-card header="TÍTULO DE PREGUNTA">
+        <div>
+            <input type="text" class="p-inputtext-lg" name="" [(ngModel)]="Question.textQuestion">
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !Question.textQuestion">
+                <div class="container-error-message">
+                    El Título de la pregunta es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <p-card header="RESPUESTA 1">
+        <div>
+            <app-kimera-ng-quill [idEditor]="'answer1'"  name="answer1" [(ngModel)]="Answer1.textAnswer"></app-kimera-ng-quill>
+        </div>
+        <div>
+            <h5>¿Es Corresta?</h5>
+            <p-toggleButton [(ngModel)]="checked1" onLabel="SI" offLabel="NO" onIcon="pi pi-check" offIcon="pi pi-times" (onChange)="changeToggle('1')"></p-toggleButton>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !Answer1.textAnswer">
+                <div class="container-error-message">
+                   El Texto es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <p-card header="RESPUESTA 2">
+        <div>
+            <app-kimera-ng-quill [idEditor]="'answer2'"  name="answer2" [(ngModel)]="Answer2.textAnswer"></app-kimera-ng-quill>
+        </div>
+        <div>
+            <h5>¿Es Corresta?</h5>
+            <p-toggleButton [(ngModel)]="checked2" onLabel="SI" offLabel="NO" onIcon="pi pi-check" offIcon="pi pi-times" (onChange)="changeToggle('2')"></p-toggleButton>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !Answer2.textAnswer">
+                <div class="container-error-message">
+                   El Texto es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <p-card header="RESPUESTA 3">
+        <div>
+            <app-kimera-ng-quill [idEditor]="'answer3'"  name="answer3" [(ngModel)]="Answer3.textAnswer"></app-kimera-ng-quill>
+        </div>
+        <div>
+            <h5>¿Es Corresta?</h5>
+            <p-toggleButton [(ngModel)]="checked3" onLabel="SI" offLabel="NO" onIcon="pi pi-check" offIcon="pi pi-times" (onChange)="changeToggle('3')"></p-toggleButton>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !Answer3.textAnswer">
+                <div class="container-error-message">
+                   El Texto es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <p-card header="RESPUESTA 4">
+        <div>
+            <app-kimera-ng-quill [idEditor]="'answer4'"  name="answer4" [(ngModel)]="Answer4.textAnswer"></app-kimera-ng-quill>
+        </div>
+        <div>
+            <h5>¿Es Corresta?</h5>
+            <p-toggleButton [(ngModel)]="checked4" onLabel="SI" offLabel="NO" onIcon="pi pi-check" offIcon="pi pi-times" (onChange)="changeToggle('4')"></p-toggleButton>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !Answer4.textAnswer">
+                <div class="container-error-message">
+                   El Texto es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+    <button pButton type="button" label="GUARDAR PREGUNTA" (click)="saveQuestionModule()"></button>
+</p-card>
