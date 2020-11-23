@@ -1,0 +1,33 @@
+.p-inputtext-lg{
+    width: 100%;
+    
+}
+
+#editor img {
+    width: 150px;
+}
+
+.alert-danger{
+
+  color: #721c24;
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  margin-bottom: 5px;
+
+}
+
+.container-error-message{
+  padding: 3px;
+
+}
+
+.imageauthor{
+    width: 25%;
+    height: 25%;
+}
+
+::-webkit-file-upload-button{
+    background: rgba(71, 71, 235, 0.795);
+    color: white;
+    padding: 1em;
+}

@@ -1,0 +1,61 @@
+<p-card header="CREAR AUTOR">
+    <!--<p-card header="IMAGEN AUTOR">
+        <div>
+            <input #fileAuthor type="file" accept="image/*" (change)="onBasicUpload($event)">
+        </div>
+        <p-footer>
+            <div *ngIf="imageAuthorBase64">
+                <img [src]="imageAuthorBase64" class="imageauthor">
+                <span (click)="removeImage()">
+                    <i class="pi pi-times" style="color: red;"></i>
+                </span>
+            </div>
+            <div class="alert-danger" *ngIf="formsCorrect == false">
+                <div class="container-error-message">
+                    El nombre del autor es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card> -->
+
+    <p-card header="NOMBRE AUTOR">
+        <div>
+            <input type="text" class="p-inputtext-lg" name="nameAuthor" [(ngModel)]="author.nameAuthor">
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !author.nameAuthor">
+                <div class="container-error-message">
+                    El nombre del autor es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <p-card header="APELLIDO AUTOR">
+        <div>
+            <input type="text" class="p-inputtext-lg" name="lastNameAuthor" [(ngModel)]="author.surnameAuthor">
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !author.surnameAuthor">
+                <div class="container-error-message">
+                    El Apellido del autor es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <p-card header="BIOGRAFIA AUTOR">
+        <div>
+            <app-kimera-ng-quill [idEditor]="'biografiaAutor'"  name="biographyAuthor" [(ngModel)]="author.biography"></app-kimera-ng-quill>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !author.biography">
+                <div class="container-error-message">
+                    La biografia del autor es requerida
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <button pButton type="button" label="GUARDAR AUTOR" (click)="saveAuthorModule()"  ></button>
+</p-card>

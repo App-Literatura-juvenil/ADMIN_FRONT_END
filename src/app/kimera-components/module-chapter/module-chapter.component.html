@@ -1,0 +1,54 @@
+<p-card header="CREAR LIBRO">
+    <p-card header="LIBRO">
+        <div>
+            <p-dropdown [options]="books" [(ngModel)]="newChapter.idBook" placeholder="Seleccione un Libro"
+                [virtualScroll]="true" [filter]="true" [style]="{'width': '100%'}"></p-dropdown>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !newChapter.idBook">
+                <div class="container-error-message">
+                    Se requiere agregar el area de conocimiento
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+    <p-card header="TITULO CAPITULO">
+        <div>
+            <input type="text" class="p-inputtext-lg" name="" [(ngModel)]="newChapter.titleChapter">
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !newChapter.titleChapter">
+                <div class="container-error-message">
+                    El Nombre del libro es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <p-card header="ORDEN CAPITULO">
+        <div>
+            <input type="number" class="p-inputtext-lg" name="orderBook" [(ngModel)]="newChapter.order">
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && newChapter.order">
+                <div class="container-error-message">
+                    El Orden del libro es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <p-card header="TEXTO DEL CAPITULO">
+        <div>
+            <app-kimera-ng-quill [idEditor]="'chapterBook'"  name="chapterBook" [(ngModel)]="newChapter.textChapter"></app-kimera-ng-quill>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !newChapter.textChapter">
+                <div class="container-error-message">
+                   El Texto del Capitulo es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+    <button pButton type="button" label="GUARDAR LIBRO" (click)="saveChapterModule()"></button>
+</p-card>

@@ -1,0 +1,29 @@
+<p-card header="CREAR LIBRO">
+    <p-card header="AUTOR">
+        <div>
+            <p-dropdown [options]="Authors" [(ngModel)]="newBook.idAuthor" placeholder="Seleccione un Autor"
+                [virtualScroll]="true" [filter]="true" [style]="{'width': '100%'}"></p-dropdown>
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !newBook.idAuthor">
+                <div class="container-error-message">
+                    Se requiere agregar el area de conocimiento
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+    <p-card header="NOMBRE">
+        <div>
+            <input type="text" class="p-inputtext-lg" name="namenook" [(ngModel)]="newBook.nameBook">
+        </div>
+        <p-footer>
+            <div class="alert-danger" *ngIf="formsCorrect == false && !newBook.nameBook">
+                <div class="container-error-message">
+                    El Nombre del libro es requerido
+                </div>
+            </div>
+        </p-footer>
+    </p-card>
+
+    <button pButton type="button" label="GUARDAR LIBRO" (click)="saveBookModule()"></button>
+</p-card>
