@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  urlApi: 'http://localhost:3000/', 
+  urlApi: 'https://kimeraproject.herokuapp.com/', 
   production: false
 };
 
